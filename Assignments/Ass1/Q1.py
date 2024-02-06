@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from utils import *
+import os
+import time
 
 class KalmannFilter :
      
@@ -91,6 +93,9 @@ def simulate(Agent, mu0, sigma0, simulation_iterations = 500, leave_obs_cond = l
     return true_state_list, observed_list, estimated_list, belief_covariances
 
 if __name__ == '__main__':
+    os.mkdir('Plots')
+    os.mkdir('Plots/HTML')
+    os.mkdir('Plots/PNG')
     A = np.array([[1,0,0,1,0,0],[0,1,0,0,1,0],[0,0,1,0,0,1],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]])
     B = np.array([[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,1,0],[0,0,1]])
     C = np.array([[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0]])
