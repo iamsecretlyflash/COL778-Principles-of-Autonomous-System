@@ -2,7 +2,9 @@
 
 ## File descriptions
 1) Q1.py contains the implementation of the basic agent and linear Kalman Filter. It estimates the trjectory of an aeroplane with noisy observation sensors
-2) 
+2) Q1_StateAssociation implements multiple data association strategies for estimating positions for multiple aeroplanes.
+3) Q2.py implements the Extended Kalman Filter and the Aeroplane Agent with Landmark Observations
+4) Hungarian.py contains an implementation of the Hungarian Algorithm for matching in bipartite graphs.
 
 ## Instructions for running the assignment files
 
