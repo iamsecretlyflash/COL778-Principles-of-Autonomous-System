@@ -1,3 +1,9 @@
+# State Estimation using Kalman Filters
+
+## File descriptions
+1) Q1.py contains the implementation of the basic agent and linear Kalman Filter. It estimates the trjectory of an aeroplane with noisy observation sensors
+2) 
+
 ## Instructions for running the assignment files
 
 1) Requirements :
