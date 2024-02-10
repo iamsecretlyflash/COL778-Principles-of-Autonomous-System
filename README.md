@@ -5,7 +5,7 @@ This repository ccontains assignments, lecture notes, books and other resources 
    - Read about homogenous transforms [here](https://mecharithm.com/learning/lesson/homogenous-transformation-matrices-configurations-in-robotics-12#).
 
 2) Bayes Filtering Algorithm
-   - Read Bishop Chapter 8 to learn about Graphical Models
+   - Read [Bishop](https://github.com/iamsecretlyflash/COL774/blob/main/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf) Chapter 8 to learn about Graphical Models
    - Can be broken down into two steps
      - Action update step $p(x_t | z_1,....z_{t-1}, u_1,....u_t)$
      - Measurement update step $p(x_t | z_1,....z_{t}, u_1,....u_t)$
