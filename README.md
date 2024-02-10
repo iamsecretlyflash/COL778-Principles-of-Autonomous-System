@@ -7,30 +7,27 @@ This repository ccontains assignments, lecture notes, books and other resources 
 2) Bayes Filtering Algorithm
    - Read [Bishop](https://github.com/iamsecretlyflash/COL774/blob/main/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf) Chapter 8 to learn about Graphical Models
    - Can be broken down into two steps
-     - Action update step $p(x_t | z_1,....z_{t-1}, u_1,....u_t)$
-     - Measurement update step $p(x_t | z_1,....z_{t}, u_1,....u_t)$
-   - <details>
-      <summary>Action Update Step</summary>
-      
-      $p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1})p(x_{t-1} | z_1,....z_{t-1}, u_1,....u_t)dx_{t-1}$ 
-      
-     Now, $p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1}) = p(x_t | x_{t-1}, u_t)$ and $p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t) = Bel(x_{t-1})$
-
-     $\therefore p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | x_{t-1}, u_t)Bel(x_{t-1})dx_{t-1}$
+     - <details>
+        <summary>Action update step $p(x_t | z_1,....z_{t-1}, u_1,....u_t)$</summary>
+  
+        $p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1})p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t)dx_{t-1}$
+       Now, $p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1}) = p(x_t | x_{t-1}, u_t)$ and $p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t) = Bel(x_{t-1})$
+       $\therefore p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | x_{t-1}, u_t)Bel(x_{t-1})dx_{t-1}$
+       
+       or, $\overline{Bel}(X_t) = \int_{x_{t-1}}p(x_t | x_{t-1}, u_t)Bel(x_{t-1})dx_{t-1}$
      
-     or, $\overline{Bel}(X_t) = \int_{x_{t-1}}p(x_t | x_{t-1}, u_t)Bel(x_{t-1})dx_{t-1}$
-   
-    </details>
-    
-   - <details>
-      <summary>Measurement Update Step</summary>
-      
-      $p(x_t | z_1,....z_{t}, u_1,....u_t) = \eta * p(z_t | x_t,z_1,....z_{t-1}, u_1,....u_t) * p(x_t |z_1,....z_{t-1}, u_1,....u_t) $
+     </details>
+     
+      - <details>
+        <summary>Measurement update step $p(x_t | z_1,....z_{t}, u_1,....u_t)$</summary>
+        <br>
+        $p(x_t | z_1,....z_{t}, u_1,....u_t) = \eta * p(z_t | x_t,z_1,....z_{t-1}, u_1,....u_t) * p(x_t |z_1,....z_{t-1}, u_1,....u_t)$
 
-      Now, $p(z_t | x_t,z_1,....z_{t-1}, u_1,....u_t) = p(z_t | x_t)$
+        Now, $p(z_t | x_t,z_1,....z_{t-1}, u_1,....u_t) = p(z_t | x_t)$
 
-      $\therefore Bel(x_t) = \eta * p(z_t | x_t) * \overline{Bel}(x_t)$
-   </details>
+        $\therefore Bel(x_t) = \eta * p(z_t | x_t) * \overline{Bel}(x_t)$
+     
+     </details>
 3) State Estimation using Kalman Filters
    - Read about Conditioned Joint Gaussian PDFs [here](https://bmeyers.github.io/conditional_distribution_for_jointly_gaussian_random_vectors/).
    -  <details>
