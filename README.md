@@ -9,11 +9,11 @@ This repository ccontains assignments, lecture notes, books and other resources 
    - Can be broken down into two steps
      - <details>
         <summary>Action update step $p(x_t | z_1,....z_{t-1}, u_1,....u_t)$</summary>
-  
+        <br>
         $p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1})p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t)dx_{t-1}$
        Now, $p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1}) = p(x_t | x_{t-1}, u_t)$ and $p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t) = Bel(x_{t-1})$
        $\therefore p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | x_{t-1}, u_t)Bel(x_{t-1})dx_{t-1}$
-       
+       <br>
        or, $\overline{Bel}(X_t) = \int_{x_{t-1}}p(x_t | x_{t-1}, u_t)Bel(x_{t-1})dx_{t-1}$
      
      </details>
@@ -23,8 +23,7 @@ This repository ccontains assignments, lecture notes, books and other resources 
         <br>
         $p(x_t | z_1,....z_{t}, u_1,....u_t) = \eta * p(z_t | x_t,z_1,....z_{t-1}, u_1,....u_t) * p(x_t |z_1,....z_{t-1}, u_1,....u_t)$
 
-        Now, $p(z_t | x_t,z_1,....z_{t-1}, u_1,....u_t) = p(z_t | x_t)$
-
+        Now, $p(z_t | x_t,z_1,....z_{t-1}, u_1,....u_t) = p(z_t | x_t)$ <br>
         $\therefore Bel(x_t) = \eta * p(z_t | x_t) * \overline{Bel}(x_t)$
      
      </details>
