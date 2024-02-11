@@ -56,3 +56,4 @@ This repository ccontains assignments, lecture notes, books and other resources 
       </details>
 4) MDPs :
    - Read about Prioritized Value Iteration [here](https://web2.qatar.cmu.edu/~gdicaro/15281/additional/variants-of-value-iteration.pdf).
+   - Read about Forward Search for MPDs [here](https://www.khoury.northeastern.edu/home/camato/5100/mdps.pdf).
