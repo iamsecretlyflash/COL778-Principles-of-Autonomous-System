@@ -10,7 +10,7 @@ This repository ccontains assignments, lecture notes, books and other resources 
      - <details>
         <summary>Action update step $p(x_t | z_1,....z_{t-1}, u_1,....u_t)$</summary>
         <br>
-        $p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1})p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t)dx_{t-1}$
+        $p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1})p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t)dx_{t-1}$ <br>
        Now, $p(x_t | z_1,....z_{t-1}, u_1,....u_t, x_{t-1}) = p(x_t | x_{t-1}, u_t)$ and $p(x_{t-1} | z_1,....z_{t-1},u_1,....u_t) = Bel(x_{t-1})$
        $\therefore p(x_t | z_1,....z_{t-1}, u_1,....u_t) = \int_{x_{t-1}}p(x_t | x_{t-1}, u_t)Bel(x_{t-1})dx_{t-1}$
        <br>
