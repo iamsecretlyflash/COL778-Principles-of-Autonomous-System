@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
 
-def get_traj_frames(grid, policy):
+def get_traj_frames(grid, policy,max_frames = 100):
     # start state will be coded as red, free state as white, goal state as green, hole state as black
     frames = []
-    
+    total = 0
     curr_grid = np.zeros_like(grid, dtype = np.uint8)
     curr_grid[grid == 'S'] = 0
     curr_grid[grid == 'F'] = 100
@@ -20,24 +20,25 @@ def get_traj_frames(grid, policy):
     
     frames.append(curr_grid)
     # now get the frames assuming a deterministic transition model for now
-    while True:
+    while True and total < max_frames:
+        total+=1
         r, c = np.where(curr_grid == 0)
         r, c = r[0], c[0]
         r_old = r
         c_old = c
     
         action = policy[r][c]
-        if action == '_':
+        if action == -1:
             # either you have reached the terminal state or the hole state
             
             break
-        if action == 't':
+        if action == 0:
             r = max(r-1, 0)
-        elif action == 'd':
+        elif action == 1:
             r = min(r+1, grid.shape[0]-1)
-        elif action == 'l':
+        elif action == 2:
             c = max(c-1, 0)
-        elif action == 'r':
+        elif action == 3:
             c = min(c+1, grid.shape[1]-1)
 
         # change the grid

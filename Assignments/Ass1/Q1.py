@@ -99,21 +99,20 @@ if __name__ == '__main__':
     # os.mkdir('viva')
     A = np.array([[1,0,0,1,0,0],[0,1,0,0,1,0],[0,0,1,0,0,1],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]])
     B = np.array([[0,0,0],[0,0,0],[0,0,0],[1,0,0],[0,1,0],[0,0,1]])
-    C = np.array([[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0]])
+    C = np.array([[1,0,0,0,0,0],[0,1,0,0,0,0],[0,0,1,0,0,0],[0,0,0,1,0,0],[0,0,0,0,1,0],[0,0,0,0,0,1]])
     rx, ry, rz = 1.2,1.2,1.2 
     rvx, rvy, rvz  = 0.01,0.01,0.01
     Qt = np.diag([rx, ry, rz, rvx, rvy, rvz])**2
-    Qt = np.eye(6) * (1000000000000)
-    Rt = np.eye(3)*(10**2)
+    Rt = np.eye(6)*(7**2)
     mu0 = np.array([0,0,0,0,0,0])
+    mu1 = np.array([0,0,0,0.5,0,0])
     sigma0 = np.eye(6)*((0.01)**2)
 
     Agent1 = AeroplaneAgent(mu0, A, B, C, Qt, Rt)
-    true_state_list, observed_list, estimated_list, belief_covariances = simulate(Agent1, mu0, sigma0, 3)
-    ac_obs_traj = plot_trajectories([[true_state_list, 'Actual'], [observed_list, 'Observed']],  0, 1,2)
+    true_state_list, observed_list, estimated_list, belief_covariances = simulate(Agent1, mu1, sigma0, 500)
     #ac_obs_traj.show()
-    all_traj = plot_trajectories([[true_state_list, 'True'], [observed_list, 'Observed'], [estimated_list, 'Estimated']],  0, 1,2)
-   # all_traj.show()
+    all_traj = plot_trajectories([[true_state_list, 'True'], [estimated_list, 'Estimated']],  3,4,5)
+    all_traj.show()
     fig_c, ax_c = plt.subplots(figsize=(60,40))
     ax_c = uncertainity_ellipse(estimated_list, belief_covariances, ax_c,0,1)
     ax_c.set_xlabel('X')
