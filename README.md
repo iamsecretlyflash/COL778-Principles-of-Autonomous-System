@@ -3,7 +3,7 @@ This repository ccontains assignments, lecture notes, books and other resources 
 ## Topic wise resources
 1) State Representation :
    - Read about homogenous transforms [here](https://mecharithm.com/learning/lesson/homogenous-transformation-matrices-configurations-in-robotics-12#).
-   - Read about Camera Calibratoin [here](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT9/node3.html)
+   - Read about Camera Calibration [here](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/OWENS/LECT9/node3.html)
 
 2) Bayes Filtering Algorithm :
    - Read [Bishop](https://github.com/iamsecretlyflash/COL774/blob/main/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf) Chapter 8 to learn about Graphical Models
